@@ -1,4 +1,4 @@
-var received_min;
+var received_min=0.5;
 var distance,src;
 src='ocean.mp3';
 var audio,signal;
