@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.bold{
+    margin-left: 5px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    /* justify-items: center; */
+    align-items: center;
+    padding: 10px;  
+    /* margin: 10px; */
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgb(209, 206, 206);
+}
+.img{
+    height: 30px;
+    margin-top: 5px;
+}
+.para{
+    margin-left: 24vh;
+    font-size: larger;
+}
+.destination{
+    margin-bottom: 20px;
+}

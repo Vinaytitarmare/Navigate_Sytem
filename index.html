@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #map {
+            margin:auto;
+            height: 80vh;
+            width: 80%;
+            border-radius: 20px;
+        }
+    </style>
+     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+     <link
+       rel="stylesheet"
+       as="style"
+       onload="this.rel='stylesheet'"
+       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Work+Sans%3Awght%40400%3B500%3B700%3B900"
+     />
+ 
+     <title>Navigation</title>
+     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+     <link
+       rel="stylesheet"
+       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+     />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <script src="https://apis.mapmyindia.com/advancedmaps/v1/814fc1432fccd1cf015a60e8777eb38f/map_load?v=1.3"></script>
+   
+<link rel="stylesheet" href="style.css">
+</head>
+
+
+
+<body class=" bg-slate-50">
+  <div class="top">a</div>
+    <!-- navbar bawaa -->
+   <div class="navbar fixed z-10 top-0 left-0 w-full h-auto bg-slate-50">
+    <div class=""><p><i class="fa-brands fa-dropbox"></i><b class="bold">Navigate</b></p></div>
+    
+    <div><img src="prof.jpg" class="img" alt=""></div>
+   </div>
+
+
+
+<div class="mt-[8%]"><p class="ml-40 text-lg font-semibold my-2 ">Mark your Destination on the Map</p></div>
+
+<div id="map-container" class="relative">  
+    <div id="map" class="z-0 h-80 w-full">
+    </div>
+
+</div>
+<div
+class="set_ringtone  relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden"
+style="
+  --radio-dot-svg: url('data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(32,148,243)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3ccircle cx=%278%27 cy=%278%27 r=%273%27/%3e%3c/svg%3e');
+  font-family: 'Work Sans', 'Noto Sans', sans-serif;
+"
+>
+<div class="layout-container flex h-full grow flex-col">
+  <div class="px-40 flex flex-1 justify-center py-5">
+    <div
+      class="layout-content-container flex flex-col w-[512px] py-5 max-w-[960px] flex-1"
+    >
+      <h1
+        class="text-[#0d151c] text-[22px] font-bold leading-tight px-4 text-center pb-3 pt-5"
+      >
+        Set Alarm
+      </h1>
+      <h3
+        class="text-[#0d151c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
+      >
+        Ringtone
+      </h3>
+     
+      <div
+        class="    flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2"
+      >
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
+          style="
+            background-image: url('ocean.png');
+          "
+        ></div>
+        <div class="flex flex-col justify-center w-56">
+          <p
+            class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1"
+          >
+            Ocean waves
+          </p>
+          <p
+            class="text-[#49779c] text-sm font-normal leading-normal line-clamp-2"
+          >
+            Calm and soothing
+          </p>
+        </div>
+        <div class="flex play-pause-option">
+          <div
+            class="flex justify-center items-center bg-slate-400 size-8 rounded-full play-pause-icon"
+          >
+            <i class="fa-solid fa-play play"></i
+            ><i class="fa-solid fa-pause pause hidden"></i> 
+            <audio class="audio-file" src="ocean.mp3"></audio>
+          
+          </div>
+          
+        </div>
+        <div class="parent_ring flex justify-center items-center "> <audio class="audio-file" src="ocean.mp3"></audio><button class="ml-10 mb-2  px-4 py-2 bg-cyan-600 text-white rounded-lg  select_ringtone" >Set Ringtone</button></div>
+      </div>
+      <div
+        class="   flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2"
+      >
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
+          style="
+            background-image: url('piano.png');
+          "
+        ></div>
+        <div class="flex flex-col justify-center w-56">
+          <p
+            class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1"
+          >
+            Piano
+          </p>
+          <p
+            class="text-[#49779c] text-sm font-normal leading-normal line-clamp-2"
+          >
+            Slow, melodic tones
+          </p>
+        </div>
+        <div class="flex play-pause-option">
+          <div
+            class="flex justify-center items-center bg-slate-400 size-8 rounded-full play-pause-icon"
+          >
+            <i class="fa-solid fa-play play"></i
+            ><i class="fa-solid fa-pause pause hidden"></i>
+            <audio class="audio-file" src="piano.mp3"></audio>
+          </div>
+        </div>
+        <div class="parent_ring flex justify-center items-center ">  <audio class="audio-file" src="piano.mp3"></audio><button class="ml-10 mb-2  px-4 py-2 bg-cyan-600 text-white rounded-lg select_ringtone">Set Ringtone</button></div>
+      </div>
+      <div
+        class="   flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2"
+      >
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
+          style="
+            background-image: url('guitar.png');
+          "
+        ></div>
+        <div class="flex flex-col justify-center w-56">
+          <p
+            class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1"
+          >
+            Rock guitar
+          </p>
+          <p
+            class="text-[#49779c] text-sm font-normal leading-normal line-clamp-2"
+          >
+            Energetic and lively
+          </p>
+        </div>
+        <div class="flex play-pause-option">
+          <div
+            class="flex justify-center items-center bg-slate-400 size-8 rounded-full play-pause-icon"
+          >
+            <i class="fa-solid fa-play play"></i
+            ><i class="fa-solid fa-pause pause hidden"></i>
+            <audio class="audio-file" src="guitar.mp3"></audio>
+          </div>
+        </div>
+        <div class="parent_ring flex justify-center items-center "> <audio class="audio-file" src="guitar.mp3"></audio><button class="ml-10 mb-2  px-4 py-2 bg-cyan-600 text-white rounded-lg  select_ringtone">Set Ringtone</button></div>
+      </div>
+      <div
+        class="   flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2"
+      >
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
+          style="
+            background-image: url('acoustic.png');
+          "
+        ></div>
+        <div class="flex flex-col justify-center w-56">
+          <p
+            class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1"
+          >
+            Acoustic guitar
+          </p>
+          <p
+            class="text-[#49779c] text-sm font-normal leading-normal line-clamp-2"
+          >
+            Soft and gentle
+          </p>
+        </div>
+        <div class="flex play-pause-option">
+          <div
+            class="flex justify-center items-center bg-slate-400 size-8 rounded-full play-pause-icon"
+          >
+            <i class="fa-solid fa-play play"></i
+            ><i class="fa-solid fa-pause pause hidden"></i>
+            <audio class="audio-file" src="acoustic_guitar.mp3"></audio>
+          </div>
+        </div>
+        <div class="parent_ring flex justify-center items-center ">             <audio class="audio-file" src="acoustic_guitar.mp3"></audio><button class="ml-10 mb-2  px-4 py-2 bg-cyan-600 text-white rounded-lg  select_ringtone">Set Ringtone</button></div>
+      </div>
+      <div
+        class="   flex items-center gap-4 bg-slate-50 px-4 min-h-[72px] py-2"
+      >
+        <div
+          class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-14 w-fit"
+          style="
+            background-image: url('pop.png');
+          "
+        ></div>
+        <div class="flex flex-col justify-center w-56">
+          <p
+            class="text-[#0d151c] text-base font-medium leading-normal line-clamp-1"
+          >
+            Synth pop
+          </p>
+          <p
+            class="text-[#49779c] text-sm font-normal leading-normal line-clamp-2"
+          >
+            Upbeat and rhythmic
+          </p>
+        </div>
+        <div class="flex play-pause-option">
+          <div
+            class="flex justify-center items-center bg-slate-400 size-8 rounded-full play-pause-icon"
+          >
+            <i class="fa-solid fa-play play"></i
+            ><i class="fa-solid fa-pause pause hidden"></i>
+            <audio class="audio-file" src="pop.mp3"></audio>
+          </div>
+        </div>
+        <div class="parent_ring flex justify-center items-center "> <audio class="audio-file" src="pop.mp3"></audio><button class="ml-10 mb-2  px-4 py-2 bg-cyan-600 text-white rounded-lg select_ringtone ">Set Ringtone</button></div>
+      </div>
+      <h3
+        class="distance_part  text-[#0d151c] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4"
+      >
+        Distance
+      </h3>
+      <p class="text-[#0d151c] opacity-70    leading-tight tracking-[-0.015em] px-4 pb-2 ">*Distance before destination where you want the alarm to ring</p>
+      <div class="flex flex-col gap-3 p-4">
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+           
+            value="0.5"
+            checked=""
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              0.5 km
+            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+            
+            value="1"
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              1.0 km            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+           
+            value="1.5"
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              1.5 km
+            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+            
+            value="2"
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              2.0 km
+            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+           
+            value="2.5"
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              2.5 km
+            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+           
+            value="3"
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              3.0 km
+            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+           
+            value="3.5"
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              3.5 km
+            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+            
+            value="4"
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              4.0 km
+            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+            
+            value="4.5"
+            name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              4.5 km
+            </p>
+          </div>
+        </label>
+        <label
+          class="flex items-center gap-4 rounded-xl border border-solid border-[#cedde8] p-[15px]"
+        >
+          <input
+            type="radio"
+            class="h-5 w-5 border-2 border-[#cedde8] bg-transparent text-transparent checked:border-[#2094f3] checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-[#2094f3]"
+            
+            value="5"
+             name="distance"
+          />
+          <div class="flex grow flex-col">
+            <p class="text-[#0d151c] text-sm font-medium leading-normal">
+              5.0 km
+            </p>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+ 
+</div>
+</div>
+
+<!-- set alarm  -->
+<div class="flex justify-center items-center "><button class="submit mb-20   px-24 py-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 ">Set Alarm</button></div>
+
+
+<!-- fixed pop up -->
+ 
+<div class="thank hidden fixed  z-50 top-14 left-0 w-full h-[100vh] bg-white  transition-all duration-1000 ease-in-out"><div class=" flex flex-col justify-center items-center py-24" ><img class="mx-auto my-auto" src="thanku_pop.png" alt="">
+  <p class="mx-auto font-medium">Thanks for reaching out!</p>
+  
+  <button class="home_button px-4 py-2 bg-[#46994F] text-white rounded-lg select_ringtone my-4 font-medium hover:bg-[#64a06b]">Back to Home </button> </div></div>
+  
+   
+<div class="info_remaining hidden  fixed  z-50 top-14 left-[50vh] flex justify-center py-2 h-10 w-[90vh] bg-[#ebe8dd]  shadow-xl transition-all duration-1000 ease-in-out" :class="{ 'translate-y-0': visible, 'translate-y-[-100px]': !visible }">
+<p>Alarm is set. Alarm will ring shortly</p>
+</div>
+  
+
+
+<div class="hidden alert_alarm_bar  transition-all duration-1000 ease-in-out rounded-2xl">
+  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70%] h-[70%] bg-white z-50 backdrop-filter backdrop-blur-md backdrop-brightness-10  px-20 py-10 rounded-2xl">
+    <div class="flex flex-col rounded-2xl ">
+   <p class="text-xl font-bold  ">Notice:</p>
+   <p class="my-4">You are within your selected Alarm distance. You will reach your Destination shortly.</p>
+   <div class="flex flex-wrap gap-6"><div class="w-[30%]"><button class="ml-10 mb-2  pr-14 py-2 px-14 bg-cyan-600 text-white rounded-2xl select_ringtone hover:bg-cyan-500 stop_alarm">Stop Alarm</button></div>
+    <div class="flex flex-col"><button class="ml-10 mb-2  px-4 py-2 bg-cyan-600 text-white rounded-2xl select_ringtone hover:bg-cyan-500 snooze_alarm">Snooze Alarm</button>
+      <p class="opacity-60 ml-10 px-4">*Snooze for 30 seconds</p>
+  </div></div>
+  
+  </div></div>
+  <div class="fixed top-0 left-0 w-full h-full bg-slate-200 opacity-70 z-40"></div></div>
+  
+    <script src="3.js"></script>
+</body>
+</html>
+
+
+
+
+   <!-- <div class="destination">
+    <p class="para">
+        Select Destination
+    </p>
+    <div class="flex">
+    <div><input id="destination" type="text" class="ml-[24vh] w-96 px-4 py-2 mt-8 rounded-lg bg-gray-200 text-slate-700" placeholder="Search Destination or mark it on Map">
+    </div>
+    <div>
+        <button class="bg-cyan-600 text-white rounded-lg ml-4 px-4 py-2 mt-8  w-96 hover:bg-cyan-500 button"  onclick="geocodeDestination()"><p>Start Navigation</p></button>
+    </div>
+</div></div> -->
+
+
+<!--        
+  <div class="flex items-center space-x-2 ml-[26vh] mt-6"><i class="fa-solid fa-music"></i> <p>Alarm Music</p></div>
+  <div class="flex ">
+ <div><button class="ml-[24vh] w-96 px-4 py-2 mt-4 rounded-lg bg-gray-200 text-slate-700 hover:bg-gray-100"><p>Change</p></button> <br>
+  <p class="ml-[26vh] text-slate-700">Alarm will ring when you are near destination</p>
+</div> 
+     -->
+<!-- 
+<div class="stop  flex justify-center  h-12 ml-52 mt-4 bg-cyan-600 text-white rounded-lg  w-36 py-2 hover:bg-cyan-500">
+    <div ><button onclick="audio.pause()">Stop Alarm</button></div>
+</div> -->
