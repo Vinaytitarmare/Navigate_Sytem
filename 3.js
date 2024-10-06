@@ -1,7 +1,7 @@
 var received_min=0.5;
 var distance,src;
 src='ocean.mp3';
-var audio,signal;
+var audio,signal,options;
 var stop_signal='false';
 var thank_page=document.querySelector('.thank');
 let stop = document.querySelector(".stop");
@@ -164,19 +164,34 @@ snooze_alarm.addEventListener("click",()=>{
   })
 
 // alarm ringtone part hereeee
-const options = document.querySelectorAll(".play-pause-icon");
+ options = document.querySelectorAll(".play-pause-icon");
 options.forEach((item) => {
   item.addEventListener("click", () => {
-    let pause = item.querySelector(".pause");
-    let audio = item.querySelector(".audio-file"); // Assuming the audio tag has class "audio-file"
+  // Assuming the audio tag has class "audio-file"
+    
+  
+      var pause = item.querySelector(".pause");
+      var audio = item.querySelector(".audio-file"); 
 
     if (pause.classList.contains("hidden")) {
+        options.forEach((option) => { 
+            if(!option.querySelector('.pause').classList.contains("hidden")){
+                option.querySelector('.pause').classList.toggle("hidden");
+                option.querySelector('.play').classList.toggle("hidden");
+                let aud=option.querySelector('.audio-file');
+                aud.pause();
+            }
+          });
       audio.play();
+     
     } else {
       audio.pause();
+     
+
     }
     item.querySelector(".pause").classList.toggle("hidden");
     item.querySelector(".play").classList.toggle("hidden");
+   
   });
 });
 
