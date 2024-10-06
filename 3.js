@@ -66,6 +66,7 @@ function trackLocationEvery30Seconds() {
                 }
                 marker1 = L.marker(latlng1).addTo(map)
                     .bindPopup('You are here!').openPopup();
+                    marker1.setLatLng(latlng1);
 
                 console.log("Updated position: ", lat, lng);
             }, function(error) {
@@ -102,16 +103,17 @@ map.on('click', function(e) {
     }
 });
 
-
-function calculateDistance(latlng1, latlng2) {
-     distance = latlng1.distanceTo(latlng2) / 1000;
+var polylineLayer;
+function calculateDistance() {
+    if(stop_signal=='false'){ distance = latlng1.distanceTo(latlng2) / 1000;
   
-setInterval(()=>{
-if(stop_signal=='false'){
-    calculateDistance(latlng1, latlng2);
-    console.log(distance);
-}
-},10000)
+// setInterval(()=>{
+// if(stop_signal=='false'){
+//     calculateDistance();
+//     console.log(distance);
+// }
+// },10000)
+console.log(distance);
 
     if (distance < received_min) {
       
@@ -125,11 +127,13 @@ if(stop_signal=='false'){
            signal.classList.toggle('hidden');
         }, 1000);
     }
-
-   
-    L.polyline([latlng1, latlng2], { color: 'blue' }).addTo(map)
-        .bindPopup("Distance: " + distance.toFixed(2) + " km").openPopup();
+if(polylineLayer){
+    map.removeLayer(polylineLayer);
 }
+   
+    polylineLayer=L.polyline([latlng1, latlng2], { color: 'blue' }).addTo(map)
+        .bindPopup("Distance: " + distance.toFixed(2) + " km").openPopup();
+}}
 
 let stop_alarm=document.querySelector(".stop_alarm");
 let snooze_alarm=document.querySelector(".snooze_alarm");
@@ -218,6 +222,7 @@ let submit=document.querySelector(".submit");
 submit.addEventListener('click',()=>{
     scrollTop();
     calculateDistance(latlng1, latlng2);
+    setInterval(calculateDistance,30000);
     if(distance > received_min){
         info_remaining.classList.toggle('hidden');
         setTimeout(()=>{
@@ -351,5 +356,3 @@ set_ringtone.forEach((ringtone) => {
        
 //     });
 // });
-
-
