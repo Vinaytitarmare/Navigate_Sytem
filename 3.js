@@ -224,9 +224,9 @@ submit.addEventListener('click',()=>{
     calculateDistance(latlng1, latlng2);
     setInterval(calculateDistance,30000);
     if(distance > received_min){
-        info_remaining.classList.toggle('hidden');
+        info_remaining.classList.toggle('invisible');
         setTimeout(()=>{
-            info_remaining.classList.toggle('hidden');
+            info_remaining.classList.toggle('invisible');
         },3000)
     }
     // if(stop_signal=="true"){
