@@ -27,3 +27,10 @@
 .destination{
     margin-bottom: 20px;
 }
+@media (max-width:510px){
+    .set_ringtone{
+     zoom:0.8;
+        /* padding-inline: auto !important; */
+
+    }
+}
