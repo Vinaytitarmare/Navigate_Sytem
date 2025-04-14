@@ -40,14 +40,17 @@
   <div class="top">a</div>
     <!-- navbar bawaa -->
    <div class="navbar fixed z-10 top-0 left-0 w-full h-auto bg-slate-50">
-    <div class=""><p><i class="fa-brands fa-dropbox"></i><b class="bold">Navigate</b></p></div>
+    <div class=""><p><i class="fa-brands fa-dropbox"></i><b class="bold">Navgate</b></p></div>
     
     <div><img src="prof.jpg" class="img" alt=""></div>
    </div>
+   <div class="info_remaining mt-8 invisible  flex justify-center py-2 flex-grow-1 bg-[#ebe8dd] shadow-xl transition-all duration-1000 ease-in-out ">
+    <p>Alarm is set. Alarm will ring shortly</p>
+</div>
+  
 
 
-
-<div class="mt-[8%]"><p class="ml-[10%] text-lg font-semibold my-2 ">Mark your Destination on the Map</p></div>
+<div class="mt-[4%]"><p class="ml-[10%] text-lg font-semibold my-2 ">Mark your Destination on the Map</p></div>
 
 <div id="map-container" class="relative">  
     <div id="map" class="z-0 h-80 w-full">
@@ -425,10 +428,7 @@ style="
   <button class="home_button px-4 py-2 bg-[#46994F] text-white rounded-lg select_ringtone my-4 font-medium hover:bg-[#64a06b]">Back to Home </button> </div></div>
   
    
-<div class="info_remaining hidden  fixed  z-50 top-14 left-[50vh] flex justify-center py-2 h-10 w-[90vh] bg-[#ebe8dd]  shadow-xl transition-all duration-1000 ease-in-out" :class="{ 'translate-y-0': visible, 'translate-y-[-100px]': !visible }">
-<p>Alarm is set. Alarm will ring shortly</p>
-</div>
-  
+
 
 
 <div class="hidden alert_alarm_bar  transition-all duration-1000 ease-in-out rounded-2xl">
